@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy — BillOps</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:      #04070e;
+  --bg2:     #070b16;
+  --bg3:     #0b1022;
+  --surf:    #101624;
+  --surf2:   #151e30;
+  --surf3:   #1b263e;
+  --blue:    #3b82f6;
+  --blue2:   #1d4ed8;
+  --cyan:    #06b6d4;
+  --green:   #22c55e;
+  --text:    #edf0fa;
+  --text2:   #8892aa;
+  --text3:   #3d4a62;
+  --border:  rgba(255,255,255,0.055);
+  --border2: rgba(255,255,255,0.10);
+  --border3: rgba(255,255,255,0.17);
+  --font:    'Inter', sans-serif;
+  --display: 'Syne', sans-serif;
+  --r:       14px;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.75; overflow-x: hidden; }
+a { text-decoration: none; color: var(--cyan); }
+a:hover { text-decoration: underline; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 6%;
+  background: rgba(4,7,14,0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border2);
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--display); font-size: 1.2rem; font-weight: 800;
+  color: var(--text); letter-spacing: -0.01em;
+}
+.logo-mark {
+  width: 34px; height: 34px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  border-radius: 9px; display: grid; place-items: center;
+}
+.logo-mark svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.logo-name span { color: var(--cyan); }
+.nav-back {
+  font-size: 0.85rem; color: var(--text2); font-weight: 500;
+  display: flex; align-items: center; gap: 0.4rem;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--text); text-decoration: none; }
+
+/* PAGE WRAPPER */
+.page-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 9rem 2rem 6rem;
+}
+
+/* HERO */
+.doc-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border2);
+}
+.doc-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(6,182,212,0.1); border: 1px solid rgba(6,182,212,0.25);
+  color: var(--cyan); font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 100px; margin-bottom: 1.2rem;
+}
+.doc-header h1 {
+  font-family: var(--display); font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+.doc-header h1 span { color: var(--cyan); }
+.doc-meta { font-size: 0.85rem; color: var(--text3); }
+
+/* CONTENT */
+.doc-content h2 {
+  font-family: var(--display); font-size: 1.25rem; font-weight: 800;
+  color: var(--text); margin: 2.5rem 0 0.75rem;
+  padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+}
+.doc-content h3 {
+  font-size: 1rem; font-weight: 700; color: var(--text);
+  margin: 1.5rem 0 0.4rem;
+}
+.doc-content p { color: var(--text2); margin-bottom: 1rem; }
+.doc-content ul, .doc-content ol {
+  color: var(--text2); padding-left: 1.4rem; margin-bottom: 1rem;
+}
+.doc-content li { margin-bottom: 0.4rem; }
+.doc-content strong { color: var(--text); font-weight: 600; }
+
+/* CARD BLOCK */
+.info-card {
+  background: var(--surf);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  padding: 1.4rem 1.6rem;
+  margin: 1.5rem 0;
+}
+.info-card.highlight {
+  border-color: rgba(6,182,212,0.3);
+  background: rgba(6,182,212,0.05);
+}
+.info-card p { margin: 0; }
+
+/* TABLE OF CONTENTS */
+.toc {
+  background: var(--surf);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 2.5rem;
+}
+.toc h4 {
+  font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--text3); margin-bottom: 0.75rem;
+}
+.toc ol { padding-left: 1.2rem; margin: 0; }
+.toc li { margin-bottom: 0.3rem; }
+.toc a { color: var(--text2); font-size: 0.88rem; }
+.toc a:hover { color: var(--cyan); text-decoration: none; }
+
+/* FOOTER */
+footer {
+  background: var(--bg); border-top: 1px solid var(--border);
+  padding: 2rem 6%;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-logo {
+  display: flex; align-items: center; gap: 9px;
+  font-family: var(--display); font-weight: 800; font-size: 1rem;
+  color: var(--text);
+}
+.footer-logo .logo-mark { width: 28px; height: 28px; }
+.footer-logo span { color: var(--cyan); }
+footer .copy { font-size: 0.8rem; color: var(--text3); }
+.flinks { display: flex; gap: 1.6rem; }
+.flinks a { font-size: 0.8rem; color: var(--text3); transition: color 0.2s; }
+.flinks a:hover { color: var(--text2); text-decoration: none; }
+@media (max-width: 640px) {
+  .page-wrap { padding: 8rem 1.2rem 4rem; }
+  footer { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .flinks { flex-wrap: wrap; gap: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    </div>
+    <span class="logo-name">Bill<span>Ops</span></span>
+  </a>
+  <a class="nav-back" href="index.html">← Back to Home</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="doc-header">
+    <div class="doc-badge">Legal</div>
+    <h1>Privacy <span>Policy</span></h1>
+    <p class="doc-meta">Effective Date: May 25, 2026 &nbsp;·&nbsp; Last Updated: May 25, 2026</p>
+  </div>
+
+  <div class="info-card highlight">
+    <p><strong>Summary:</strong> BillOps collects only the data needed to provide time-tracking and invoicing automation. We connect to QuickBooks, Google, and Microsoft on your behalf using OAuth 2.0 — we never store your passwords. You can revoke access at any time.</p>
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h4>Contents</h4>
+    <ol>
+      <li><a href="#who-we-are">Who We Are</a></li>
+      <li><a href="#data-we-collect">Data We Collect</a></li>
+      <li><a href="#google-oauth">Google OAuth Data</a></li>
+      <li><a href="#microsoft-oauth">Microsoft / Outlook OAuth Data</a></li>
+      <li><a href="#quickbooks-oauth">QuickBooks OAuth Data</a></li>
+      <li><a href="#how-we-use">How We Use Your Data</a></li>
+      <li><a href="#data-sharing">Data Sharing</a></li>
+      <li><a href="#data-retention">Data Retention</a></li>
+      <li><a href="#your-rights">Your Rights</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <div class="doc-content">
+
+    <h2 id="who-we-are">1. Who We Are</h2>
+    <p>BillOps ("we," "our," or "us") is a time-tracking and billing automation platform designed for service-based businesses. Our service connects your work hours to QuickBooks invoicing automatically. We are operated by Ahmad Ali, and can be reached at <a href="mailto:abubakarzech@gmail.com">abubakarzech@gmail.com</a>.</p>
+    <p>This Privacy Policy applies to the BillOps web application and marketing website located at our registered domain.</p>
+
+    <h2 id="data-we-collect">2. Data We Collect</h2>
+
+    <h3>Account Information</h3>
+    <p>When you create a BillOps account or sign in via OAuth, we collect:</p>
+    <ul>
+      <li>Your name and email address</li>
+      <li>Profile picture (if provided by your OAuth provider)</li>
+      <li>Company or organization name</li>
+      <li>Role or job title (optional)</li>
+    </ul>
+
+    <h3>Time-Tracking Data</h3>
+    <ul>
+      <li>Timer start and stop timestamps</li>
+      <li>Duration of work sessions</li>
+      <li>Client, job, and service type associations</li>
+      <li>Notes and tags you add to time entries</li>
+      <li>Date-range filters and exported reports</li>
+    </ul>
+
+    <h3>Usage Data</h3>
+    <ul>
+      <li>Log data (browser type, IP address, pages visited, timestamps)</li>
+      <li>Device and operating system information</li>
+      <li>Crash reports and error logs</li>
+    </ul>
+
+    <h3>Communications</h3>
+    <p>If you contact us via the website contact form, we collect your name, email address, company name, and message content in order to respond to your inquiry.</p>
+
+    <h2 id="google-oauth">3. Google OAuth Data</h2>
+
+    <div class="info-card highlight">
+      <p><strong>Google API Services User Data Policy:</strong> BillOps's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+    </div>
+
+    <p>When you choose to connect your Google account, BillOps requests only the permissions necessary to provide the service. Depending on the features you use, we may request access to:</p>
+
+    <h3>Scopes We Request</h3>
+    <ul>
+      <li><strong>openid / profile / email</strong> — To authenticate your identity and display your name and email in the app.</li>
+      <li><strong>Google Calendar (read-only)</strong> — To optionally pull calendar event data so you can associate time entries with scheduled meetings or work blocks. We read event titles and durations only.</li>
+    </ul>
+
+    <h3>What We Do With Google Data</h3>
+    <ul>
+      <li>We use Google account data <strong>solely to provide the features you explicitly enable</strong>.</li>
+      <li>We do <strong>not</strong> use Google data to serve ads or build advertising profiles.</li>
+      <li>We do <strong>not</strong> sell, rent, or share your Google data with third parties for their own purposes.</li>
+      <li>We do <strong>not</strong> use Google data to train AI or machine-learning models.</li>
+      <li>We do <strong>not</strong> transfer Google user data to any other party except as necessary to provide the service (e.g., storing your time entries in our secure database).</li>
+    </ul>
+
+    <h3>Revoking Google Access</h3>
+    <p>You can disconnect your Google account at any time from within BillOps account settings, or directly from your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account Permissions page</a>. After disconnection, we delete your Google OAuth tokens from our systems within 30 days.</p>
+
+    <h2 id="microsoft-oauth">4. Microsoft / Outlook OAuth Data</h2>
+    <p>When you connect your Microsoft or Outlook account, BillOps may request:</p>
+    <ul>
+      <li><strong>openid / profile / email</strong> — For authentication and identity display.</li>
+      <li><strong>Calendars.Read</strong> — To optionally read calendar events for time-entry association, identical in purpose to the Google Calendar scope above.</li>
+    </ul>
+    <p>The same data-use principles apply: we use Microsoft data only to provide the features you enable, we do not sell it, and we do not use it for advertising. You may revoke access at any time via <a href="https://account.microsoft.com/privacy/app-access" target="_blank" rel="noopener">Microsoft's app permissions page</a> or from within BillOps settings.</p>
+
+    <h2 id="quickbooks-oauth">5. QuickBooks OAuth Data</h2>
+    <p>BillOps's core function is to push time-entry data into QuickBooks Online. When you connect QuickBooks, we access:</p>
+    <ul>
+      <li>Your QuickBooks company ID and company name</li>
+      <li>Client and customer lists (read)</li>
+      <li>Job and project lists (read)</li>
+      <li>Service item lists (read)</li>
+      <li>Invoices (create, on your behalf, when a timer stops)</li>
+      <li>Time activity records (create and read)</li>
+    </ul>
+    <p>We use this data exclusively to automate the billing workflow you have configured. We never modify or delete existing QuickBooks records except as a direct result of your own actions in BillOps. You can revoke QuickBooks access from within BillOps or from your <a href="https://accounts.intuit.com" target="_blank" rel="noopener">Intuit account settings</a>.</p>
+
+    <h2 id="how-we-use">6. How We Use Your Data</h2>
+    <ul>
+      <li><strong>Service delivery</strong> — Tracking time, generating invoices, and syncing data with connected services.</li>
+      <li><strong>Authentication</strong> — Verifying your identity and maintaining your session.</li>
+      <li><strong>Customer support</strong> — Responding to inquiries and resolving issues.</li>
+      <li><strong>Security and fraud prevention</strong> — Detecting and investigating unauthorized access.</li>
+      <li><strong>Product improvement</strong> — Analyzing aggregate, anonymized usage patterns to improve the service. We do not use identifiable data for this purpose.</li>
+      <li><strong>Legal compliance</strong> — Meeting obligations under applicable law.</li>
+    </ul>
+    <p>We do <strong>not</strong> use your data for advertising, and we do <strong>not</strong> sell your personal data to any third party.</p>
+
+    <h2 id="data-sharing">7. Data Sharing</h2>
+    <p>We share your data only in the following limited circumstances:</p>
+    <ul>
+      <li><strong>With your connected services</strong> — Data is sent to QuickBooks, Google, or Microsoft only as a direct result of actions you take in BillOps.</li>
+      <li><strong>Infrastructure providers</strong> — We use trusted cloud hosting and database providers (e.g., AWS, Vercel) under strict data-processing agreements. These providers process data on our behalf and are not permitted to use it independently.</li>
+      <li><strong>Legal requirements</strong> — If required by law, court order, or governmental authority, we may disclose data as necessary. We will notify you to the extent permitted by law.</li>
+      <li><strong>Business transfer</strong> — In the event of a merger or acquisition, your data may be transferred. We will notify affected users and provide an opportunity to delete their data before any transfer occurs.</li>
+    </ul>
+
+    <h2 id="data-retention">8. Data Retention</h2>
+    <p>We retain your data for as long as your account is active. Specifically:</p>
+    <ul>
+      <li><strong>Active accounts</strong> — Time entries, billing records, and account data are retained indefinitely while your account is active so your billing history is always accessible.</li>
+      <li><strong>Deleted accounts</strong> — We delete or anonymize all personal data within <strong>30 days</strong> of account deletion, except where retention is required by law (e.g., financial records for tax purposes, which may be retained for up to 7 years).</li>
+      <li><strong>OAuth tokens</strong> — Access tokens for Google, Microsoft, and QuickBooks are stored encrypted and deleted within 30 days of disconnection.</li>
+    </ul>
+
+    <h2 id="your-rights">9. Your Rights</h2>
+    <p>Depending on your location, you may have the following rights:</p>
+    <ul>
+      <li><strong>Access</strong> — Request a copy of the personal data we hold about you.</li>
+      <li><strong>Correction</strong> — Request that inaccurate data be corrected.</li>
+      <li><strong>Deletion</strong> — Request deletion of your personal data ("right to be forgotten").</li>
+      <li><strong>Portability</strong> — Request your data in a structured, machine-readable format.</li>
+      <li><strong>Objection</strong> — Object to processing based on legitimate interest.</li>
+      <li><strong>Withdrawal of consent</strong> — Revoke connected service access at any time without affecting prior processing.</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at <a href="mailto:abubakarzech@gmail.com">abubakarzech@gmail.com</a>. We will respond within 30 days.</p>
+
+    <h2 id="security">10. Security</h2>
+    <p>We implement industry-standard security measures to protect your data:</p>
+    <ul>
+      <li>All data is transmitted over <strong>TLS 1.3</strong> encrypted connections.</li>
+      <li>Data at rest is encrypted using <strong>AES-256</strong>.</li>
+      <li>OAuth tokens are stored encrypted and never logged in plaintext.</li>
+      <li>Access to production data is restricted to authorized personnel only.</li>
+      <li>We perform regular security reviews and maintain an incident response plan.</li>
+    </ul>
+    <p>In the event of a data breach that affects your personal data, we will notify affected users within 72 hours of becoming aware of the breach, as required by applicable law.</p>
+
+    <h2 id="children">11. Children's Privacy</h2>
+    <p>BillOps is designed for business use by adults. We do not knowingly collect personal data from anyone under the age of 16. If we become aware that we have inadvertently collected data from a child, we will delete it promptly. Contact us at <a href="mailto:abubakarzech@gmail.com">abubakarzech@gmail.com</a> if you believe this has occurred.</p>
+
+    <h2 id="changes">12. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we make material changes, we will notify you by email (to the address associated with your account) or by displaying a prominent notice within the BillOps application at least 14 days before the changes take effect. Continued use of BillOps after the effective date constitutes acceptance of the updated policy.</p>
+    <p>The "Last Updated" date at the top of this page always reflects the most recent revision.</p>
+
+    <h2 id="contact">13. Contact Us</h2>
+    <div class="info-card">
+      <p>For any questions, concerns, or data requests related to this Privacy Policy, please contact us:</p>
+      <p style="margin-top:0.75rem;">
+        <strong>BillOps Privacy</strong><br/>
+        Email: <a href="mailto:abubakarzech@gmail.com">abubakarzech@gmail.com</a><br/>
+        Response time: Within 30 days
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    </div>
+    Bill<span>Ops</span>
+  </div>
+  <p class="copy">© 2026 BillOps. All rights reserved.</p>
+  <div class="flinks">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
