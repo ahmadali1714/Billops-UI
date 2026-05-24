@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <!-- ✏️ EDIT: Browser tab title -->
 <title>BillOps — Track Time. Bill Automatically.</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 /* ============================================================
    TOKENS
@@ -33,7 +33,7 @@
   --border3:  rgba(255,255,255,0.17);
 
   --font:     'Inter', sans-serif;
-  --display:  'Syne', sans-serif;
+  --display:  'Inter', sans-serif;
   --r:        14px;
   --r-sm:     8px;
 
@@ -480,6 +480,49 @@ h2 em { color: var(--blue); font-style: italic; font-family: Georgia, serif; }
 .ind-referral p strong { color: var(--cyan); font-weight: 600; }
 
 /* ============================================================
+   INTEGRATIONS
+   ============================================================ */
+.integrations { background: var(--bg3); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.int-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.4rem; margin-top: 3rem;
+}
+.int-card {
+  background: var(--surf);
+  border: 1px solid var(--border2);
+  border-radius: var(--r); padding: 1.8rem;
+  display: flex; flex-direction: column; gap: 1rem;
+  transition: transform var(--spring), border-color 0.25s, box-shadow 0.25s;
+  cursor: default;
+}
+.int-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border3);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.32);
+}
+.int-logo {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: grid; place-items: center; flex-shrink: 0;
+}
+.int-logo svg { width: 26px; height: 26px; }
+.int-logo.qb       { background: #1a3d1a; }
+.int-logo.qb-ent   { background: #0f2b0f; }
+.int-logo.clio     { background: #003d36; }
+.int-logo.google { background: #1a1a2e; }
+.int-logo.ms { background: #0d2a4a; }
+.int-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.2rem; }
+.int-card p  { font-size: 0.84rem; color: var(--text2); line-height: 1.65; flex: 1; }
+.int-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 3px 10px; border-radius: 100px;
+  width: fit-content;
+}
+.int-badge.connected { background: rgba(34,197,94,0.1); color: var(--green); border: 1px solid rgba(34,197,94,0.25); }
+.int-badge.available { background: rgba(59,130,246,0.1); color: var(--blue); border: 1px solid rgba(59,130,246,0.25); }
+
+/* ============================================================
    WHY US
    ============================================================ */
 .why { background: var(--bg); }
@@ -749,11 +792,12 @@ footer .copy { font-size: 0.8rem; color: var(--text3); }
     <span class="logo-name">Bill<span>Ops</span></span>
   </a>
   <ul class="nav-links">
-    <li><a href="#how">How It Works</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#quickbooks">QuickBooks</a></li>
-    <li><a href="#industries">Industries</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="/how-it-works">How It Works</a></li>
+    <li><a href="/features">Features</a></li>
+    <li><a href="/quickbooks">QuickBooks</a></li>
+    <li><a href="/integrations">Integrations</a></li>
+    <li><a href="/industries">Industries</a></li>
+    <li><a href="/contact">Contact</a></li>
   </ul>
   <div class="nav-right">
     <a href="https://calendly.com/ahmadali-afzal007/30min" target="_blank" class="nav-demo">📅 Book a Demo</a>
@@ -765,11 +809,12 @@ footer .copy { font-size: 0.8rem; color: var(--text3); }
 
 <!-- Mobile fullscreen menu -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#how"         onclick="closeMenu()">How It Works</a>
-  <a href="#features"    onclick="closeMenu()">Features</a>
-  <a href="#quickbooks"  onclick="closeMenu()">QuickBooks</a>
-  <a href="#industries"  onclick="closeMenu()">Industries</a>
-  <a href="#contact"     onclick="closeMenu()">Contact</a>
+  <a href="/how-it-works"   onclick="closeMenu()">How It Works</a>
+  <a href="/features"       onclick="closeMenu()">Features</a>
+  <a href="/quickbooks"     onclick="closeMenu()">QuickBooks</a>
+  <a href="/integrations"   onclick="closeMenu()">Integrations</a>
+  <a href="/industries"     onclick="closeMenu()">Industries</a>
+  <a href="/contact"        onclick="closeMenu()">Contact</a>
   <!-- ✏️ EDIT: Replace YOUR_CALENDLY_LINK -->
   <a href="https://calendly.com/ahmadali-afzal007/30min" target="_blank" onclick="closeMenu()">📅 Book a Demo →</a>
 </div>
@@ -779,7 +824,7 @@ footer .copy { font-size: 0.8rem; color: var(--text3); }
      HERO
      ✏️ EDIT: Headline, subheadline, counter values
      ============================================================ -->
-<section class="hero">
+<section class="hero" id="hero">
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
@@ -808,7 +853,7 @@ footer .copy { font-size: 0.8rem; color: var(--text3); }
 
   <div class="hero-actions">
     <a href="https://calendly.com/ahmadali-afzal007/30min" target="_blank" class="btn-primary">📅 Book a Free Demo</a>
-    <a href="#how" class="btn-outline">⚡ See How It Works</a>
+    <a href="/how-it-works" class="btn-outline">⚡ See How It Works</a>
   </div>
 
   <!-- ✏️ EDIT: Counter end values — change data-target numbers -->
@@ -1025,6 +1070,106 @@ footer .copy { font-size: 0.8rem; color: var(--text3); }
 
 
 <!-- ============================================================
+     INTEGRATIONS
+     ============================================================ -->
+<section class="integrations" id="integrations">
+  <div class="container">
+    <div class="reveal">
+      <div class="stag">Integrations</div>
+      <h2>Works with the tools<br/><em>your team already uses.</em></h2>
+      <p class="sec-lead">BillOps connects directly to your billing, practice management, and calendar platforms — no manual data entry, no switching tabs.</p>
+    </div>
+
+    <div class="int-grid stagger">
+
+      <!-- QuickBooks -->
+      <div class="int-card reveal reveal-scale">
+        <div class="int-logo qb">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" fill="#2CA01C"/>
+            <path d="M10 16a6 6 0 1 0 12 0H19a3 3 0 1 1-6 0v-5h7a3 3 0 0 0 0-6h-4v2h4a1 1 0 0 1 0 2h-9v7z" fill="#fff"/>
+          </svg>
+        </div>
+        <div>
+          <h3>QuickBooks Online</h3>
+          <p>Invoices, clients, jobs, and services sync directly. Every timer stop fires a complete invoice into QuickBooks — automatically.</p>
+        </div>
+        <span class="int-badge connected">● Live</span>
+      </div>
+
+      <!-- QuickBooks Enterprise -->
+      <div class="int-card reveal reveal-scale">
+        <div class="int-logo qb-ent">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" fill="#1a6b1a"/>
+            <path d="M10 16a6 6 0 1 0 12 0H19a3 3 0 1 1-6 0v-5h7a3 3 0 0 0 0-6h-4v2h4a1 1 0 0 1 0 2h-9v7z" fill="#fff"/>
+            <rect x="6" y="25" width="20" height="2.5" rx="1.25" fill="#fff" opacity="0.6"/>
+          </svg>
+        </div>
+        <div>
+          <h3>QuickBooks Enterprise</h3>
+          <p>Built for larger operations. BillOps syncs time entries and billing data directly with QuickBooks Enterprise — supporting advanced inventory, job costing, and multi-user workflows.</p>
+        </div>
+        <span class="int-badge connected">● Live</span>
+      </div>
+
+      <!-- Clio -->
+      <div class="int-card reveal reveal-scale">
+        <div class="int-logo clio">
+          <svg viewBox="0 0 32 32" fill="none">
+            <rect width="32" height="32" rx="8" fill="#00A88E"/>
+            <path d="M16 7a9 9 0 1 0 6.364 15.364l-2.121-2.121A6 6 0 1 1 16 10v-3z" fill="#fff"/>
+            <circle cx="22" cy="10" r="2.5" fill="#fff"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Clio</h3>
+          <p>Pull matters and clients from Clio directly into BillOps. Log time against legal matters and push billing records back — no double entry.</p>
+        </div>
+        <span class="int-badge connected">● Live</span>
+      </div>
+
+      <!-- Google -->
+      <div class="int-card reveal reveal-scale">
+        <div class="int-logo google">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M29.6 16.32c0-.99-.09-1.94-.25-2.86H16v5.41h7.64a6.53 6.53 0 0 1-2.83 4.28v3.56h4.58c2.68-2.47 4.21-6.1 4.21-10.39z" fill="#4285F4"/>
+            <path d="M16 30c3.84 0 7.06-1.27 9.41-3.45l-4.58-3.56c-1.27.85-2.9 1.36-4.83 1.36-3.71 0-6.86-2.51-7.98-5.88H3.3v3.67A14 14 0 0 0 16 30z" fill="#34A853"/>
+            <path d="M8.02 18.47A8.4 8.4 0 0 1 7.58 16c0-.86.15-1.69.44-2.47V9.86H3.3A14 14 0 0 0 2 16c0 2.26.54 4.4 1.3 6.14l4.72-3.67z" fill="#FBBC05"/>
+            <path d="M16 7.64c2.09 0 3.97.72 5.45 2.13l4.08-4.08A14 14 0 0 0 16 2 14 14 0 0 0 3.3 9.86l4.72 3.67C9.14 10.15 12.29 7.64 16 7.64z" fill="#EA4335"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Google Workspace</h3>
+          <p>Sign in with Google and import calendar events as time entries. Gmail and Google Calendar keep your billable work and your inbox in sync.</p>
+        </div>
+        <span class="int-badge connected">● Live</span>
+      </div>
+
+      <!-- Microsoft Outlook -->
+      <div class="int-card reveal reveal-scale">
+        <div class="int-logo ms">
+          <svg viewBox="0 0 32 32" fill="none">
+            <rect width="32" height="32" rx="8" fill="#0078D4"/>
+            <rect x="4" y="4" width="11" height="11" rx="1" fill="#fff"/>
+            <rect x="17" y="4" width="11" height="11" rx="1" fill="#50E6FF"/>
+            <rect x="4" y="17" width="11" height="11" rx="1" fill="#50E6FF"/>
+            <rect x="17" y="17" width="11" height="11" rx="1" fill="#fff"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Microsoft Outlook</h3>
+          <p>Connect your Outlook account to log time directly from calendar meetings. Outlook Calendar and email integrations keep billing tied to real work.</p>
+        </div>
+        <span class="int-badge connected">● Live</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
      INDUSTRIES — "Who's Using BillOps"
      ✏️ EDIT: Industry cards and referral banner text
      ============================================================ -->
@@ -1079,8 +1224,9 @@ footer .copy { font-size: 0.8rem; color: var(--text3); }
         <h3>Bookkeeping & Finance Consultants</h3>
         <p>Track client hours across bookkeeping, advisory, and compliance work. BillOps ensures every billable minute is captured and invoiced without manual effort.</p>
       </div>
+    </div>
 
-    <!-- ✏️ EDIT: Referral banner text -->
+    <!-- Referral banner — outside the grid so it spans full width -->
     <div class="ind-referral reveal">
       <div class="ind-referral-icon">🔁</div>
       <div>
@@ -1145,12 +1291,12 @@ footer .copy { font-size: 0.8rem; color: var(--text3); }
       <p class="contact-lead">Have questions or want to see BillOps live? Reach out — we'll walk you through everything, no pressure.</p>
 
       <div class="contact-cards stagger">
-        <a href="mailto:abubakarzech@gmail.com" class="ccard email-card reveal reveal-scale">
+        <a href="mailto:info@cloudbaselabs.com" class="ccard email-card reveal reveal-scale">
           <div class="ccard-glow"></div>
           <div class="ccard-icon">✉️</div>
           <div class="ccard-body">
             <strong>Send an Email</strong>
-            <span>abubakarzech@gmail.com</span>
+            <span>info@cloudbaselabs.com</span>
           </div>
           <div class="ccard-arrow">→</div>
         </a>
@@ -1238,7 +1384,7 @@ footer .copy { font-size: 0.8rem; color: var(--text3); }
     <div class="cta-btns">
       <!-- ✏️ EDIT: Replace YOUR_CALENDLY_LINK -->
       <a href="https://calendly.com/ahmadali-afzal007/30min" target="_blank" class="btn-primary">📅 Book a Free Demo</a>
-      <a href="#contact" class="btn-outline">💬 Get in Touch →</a>
+      <a href="/contact" class="btn-outline">💬 Get in Touch →</a>
     </div>
   </div>
 </section>
@@ -1261,7 +1407,7 @@ footer .copy { font-size: 0.8rem; color: var(--text3); }
     <!-- ✏️ EDIT: Footer links -->
     <a href="privacy-policy.html">Privacy Policy</a>
     <a href="terms.html">Terms of Use</a>
-    <a href="#contact">Contact</a>
+    <a href="/contact">Contact</a>
     <a href="https://www.linkedin.com/company/bill-ops/" target="_blank">LinkedIn</a>
   </div>
 </footer>
@@ -1367,10 +1513,10 @@ document.addEventListener('keydown', function(e) {
 /* ── EmailJS Setup ──
    To activate email sending:
    1. Create a free account at https://www.emailjs.com
-   2. Add a Gmail service (connect your abubakarzech@gmail.com account)
+   2. Add a Gmail service (connect your info@cloudbaselabs.com account)
    3. Create an email template with variables:
       {{from_name}}, {{from_email}}, {{company}}, {{message}}
-      Set the "To Email" field to: abubakarzech@gmail.com
+      Set the "To Email" field to: info@cloudbaselabs.com
    4. Copy your Service ID, Template ID, and Public Key into the vars below
 */
 (function() {
@@ -1414,11 +1560,11 @@ function submitContactForm() {
     from_email: email,
     company:    company || 'Not provided',
     message:    message,
-    to_email:   'abubakarzech@gmail.com'
+    to_email:   'info@cloudbaselabs.com'
   };
 
   if (typeof emailjs === 'undefined') {
-    errEl.textContent = 'Email service not configured yet. Please email us directly at abubakarzech@gmail.com';
+    errEl.textContent = 'Email service not configured yet. Please email us directly at info@cloudbaselabs.com';
     errEl.style.display = 'block';
     btn.disabled = false;
     btn.textContent = 'Send Message →';
@@ -1430,13 +1576,69 @@ function submitContactForm() {
       document.getElementById('modalFormWrap').style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
     }, function(error) {
-      errEl.textContent = 'Failed to send. Please email us directly at abubakarzech@gmail.com';
+      errEl.textContent = 'Failed to send. Please email us directly at info@cloudbaselabs.com';
       errEl.style.display = 'block';
       btn.disabled = false;
       btn.textContent = 'Send Message →';
       console.error('EmailJS error:', error);
     });
 }
+
+/* ── Clean URL Routing ── */
+const routeMap = {
+  'hero':          '/',
+  'how':           '/how-it-works',
+  'features':      '/features',
+  'quickbooks':    '/quickbooks',
+  'integrations':  '/integrations',
+  'industries':    '/industries',
+  'contact':       '/contact'
+};
+const pathToSection = Object.fromEntries(Object.entries(routeMap).map(([k,v])=>[v,k]));
+
+// Intercept all internal nav link clicks — scroll instead of navigating
+document.querySelectorAll('a[href^="/"]').forEach(link => {
+  const path = link.getAttribute('href');
+  if (!pathToSection[path]) return;
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const id = pathToSection[path];
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    history.pushState({}, '', path);
+  });
+});
+
+// Update URL bar as user scrolls between sections
+const routeObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const url = routeMap[entry.target.id];
+      if (url) history.replaceState({}, '', url);
+    }
+  });
+}, { threshold: 0.35 });
+
+Object.keys(routeMap).forEach(id => {
+  const el = document.getElementById(id);
+  if (el) routeObserver.observe(el);
+});
+
+// On page load: scroll to section from URL path or sessionStorage redirect
+(function() {
+  const stored = sessionStorage.getItem('scrollTo');
+  if (stored) {
+    sessionStorage.removeItem('scrollTo');
+    const el = document.getElementById(stored);
+    if (el) setTimeout(() => { el.scrollIntoView({ behavior: 'smooth' }); history.replaceState({}, '', routeMap[stored] || '/'); }, 100);
+    return;
+  }
+  const sectionId = pathToSection[window.location.pathname];
+  if (sectionId) {
+    const el = document.getElementById(sectionId);
+    if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+  }
+})();
 </script>
 </body>
 </html>
