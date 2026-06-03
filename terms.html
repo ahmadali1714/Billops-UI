@@ -44,11 +44,10 @@ nav {
   font-size: 1.15rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em;
 }
 .logo-mark {
-  width: 32px; height: 32px; flex-shrink: 0;
-  background: linear-gradient(135deg, var(--blue), var(--cyan));
-  border-radius: 8px; display: grid; place-items: center;
+  width: 36px; height: 36px; flex-shrink: 0;
+  background: none; border-radius: 0; overflow: hidden;
 }
-.logo-mark svg { width: 16px; height: 16px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.logo-mark img { width: 100%; height: 100%; object-fit: contain; }
 .logo-name span { color: var(--cyan); }
 .nav-back { font-size: 0.84rem; color: var(--text2); font-weight: 500; transition: color 0.2s; }
 .nav-back:hover { color: var(--text); text-decoration: none; }
@@ -157,7 +156,7 @@ footer {
   display: flex; align-items: center; gap: 8px;
   font-size: 0.95rem; font-weight: 800; color: var(--text);
 }
-.footer-logo .logo-mark { width: 26px; height: 26px; }
+.footer-logo .logo-mark { width: 30px; height: 30px; }
 .footer-logo span { color: var(--cyan); }
 footer .copy { font-size: 0.78rem; color: var(--text3); }
 .flinks { display: flex; gap: 1.4rem; }
@@ -194,7 +193,7 @@ footer .copy { font-size: 0.78rem; color: var(--text3); }
 <nav>
   <a class="logo" href="index.html">
     <div class="logo-mark">
-      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      <img src="logo.png" alt="BillOps">
     </div>
     <span class="logo-name">Bill<span>Ops</span></span>
   </a>
@@ -350,7 +349,7 @@ footer .copy { font-size: 0.78rem; color: var(--text3); }
 <footer>
   <div class="footer-logo">
     <div class="logo-mark">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      <img src="logo.png" alt="BillOps">
     </div>
     Bill<span>Ops</span>
   </div>
